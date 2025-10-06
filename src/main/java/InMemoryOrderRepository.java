@@ -9,8 +9,9 @@ public final class InMemoryOrderRepository implements OrderRepository {
 
     @Override
     public boolean save(Order order) {
-        if (order == null) throw new IllegalArgumentException("order");
-        if (order.id == null || order.id.isBlank()) throw new IllegalArgumentException("order.id");
+        // GUARDS
+      //  if (/* TODO: order ? */) throw new IllegalArgumentException("order");
+      //  if (/* TODO: order.id ? */) throw new IllegalArgumentException("order.id");
 
         boolean isNew = !store.containsKey(order.id);
         store.put(order.id, order);
@@ -19,7 +20,8 @@ public final class InMemoryOrderRepository implements OrderRepository {
 
     @Override
     public Order getByIdOrThrow(String id) {
-        if (id == null || id.isBlank()) throw new IllegalArgumentException("id");
+        // GUARDS
+        //if (/* TODO: id ? */) throw new IllegalArgumentException("id");
 
         Order o = store.get(id);
         if (o == null) throw new java.util.NoSuchElementException("unknown id " + id);
@@ -28,7 +30,8 @@ public final class InMemoryOrderRepository implements OrderRepository {
 
     @Override
     public boolean deleteById(String id) {
-        if (id == null || id.isBlank()) throw new IllegalArgumentException("id");
+        // GUARDS
+        //if (/* TODO: id ? */) throw new IllegalArgumentException("id");
 
         return store.remove(id) != null;
     }
