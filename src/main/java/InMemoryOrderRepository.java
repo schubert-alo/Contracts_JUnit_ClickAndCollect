@@ -7,20 +7,13 @@ public final class InMemoryOrderRepository implements OrderRepository {
 
     private final Map<String, Order> store = new LinkedHashMap<>();
 
-
-    private static void requireNonBlank(String id, String name) {
-        if (id == null || id.isBlank()) {
-            throw new IllegalArgumentException(name + " must not be null or blank");
-        }
-    }
-
     @Override
     public boolean save(Order order) {
         // GUARDS
-        if (order == null) {
+        if (/* TODO: order ? */) {
             throw new IllegalArgumentException("order must not be null");
         }
-        if (order.id == null || order.id.isBlank()) {
+        if (/* TODO: order.id ? */) {
             throw new IllegalArgumentException("order.id must not be null or blank");
         }
 
@@ -32,7 +25,7 @@ public final class InMemoryOrderRepository implements OrderRepository {
     @Override
     public Order getByIdOrThrow(String id) {
         // GUARDS
-        if (id == null || id.isBlank()) {
+        if (/* TODO: id ? */) {
             throw new IllegalArgumentException("id must not be null or blank");
         }
 
@@ -44,7 +37,7 @@ public final class InMemoryOrderRepository implements OrderRepository {
     @Override
     public boolean deleteById(String id) {
         // GUARDS
-        if (id == null || id.isBlank()) {
+        if (/* TODO: order.id ? */) {
             throw new IllegalArgumentException("id must not be null or blank");
         }
 
