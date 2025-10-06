@@ -30,7 +30,7 @@ public class Main {
         // 🔴 Fehlerfälle: ungültige Eingaben / nicht gefunden
         System.out.println("\n== Fehlerpfade ==");
         try {
-            repo.getByIdOrThrow("UNKNOWN");
+            repo.getByIdOrThrow("Quatsch_ID");
         } catch (Exception e) {
             System.out.println("Expected: " + e);
         }

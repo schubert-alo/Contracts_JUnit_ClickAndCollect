@@ -17,8 +17,12 @@ final class Order {
      * @throws IllegalArgumentException wenn id null/leer oder totalInCents < 0
      */
     Order(String id, int totalInCents) {
-        if (id == null || id.isBlank()) throw new IllegalArgumentException("id");
-        if (totalInCents < 0) throw new IllegalArgumentException("totalInCents");
+        if (id == null || id.isBlank()) {
+            throw new IllegalArgumentException("id must not be null or blank");
+        }
+        if (totalInCents < 0) {
+            throw new IllegalArgumentException("totalInCents must be >= 0");
+        }
         this.id = id;
         this.totalInCents = totalInCents;
     }
